@@ -2,14 +2,14 @@
 
 ### Summary
 
-**Stata** is a statistical software that is commonly used in the fields of economics, sociology, political science and science.  It allows users to analyze, manage, and produce visualizations of data. STATA's command line and graphical user interface to make the use of the software more intuitive. Hence, this workshop walks through Stata interface as well as statistical concepts to provide introductory research methods.
+**Stata** is a statistical software that is commonly used in the fields of economics, sociology, political science and science.  It allows users to analyze, manage, and produce visualizations of data. Stata's command line and graphical user interface to make the use of the software more intuitive. Hence, this workshop walks through Stata interface as well as statistical concepts to provide introductory research methods.
  
 ### Purpose
 
-The 1.5 hour workshop is intended to introduce STATA and statistical analysis to users with little or no experience for the software.
+The 1.5 hour workshop is intended to introduce Stata and statistical analysis to users with little or no experience for the software.
 
 ### Prerequisite
-1. Local installation or access to STATA through Remote Desktop environment. 
+1. Local installation or access to Stata through Remote Desktop environment. 
 1. Though not required, some basic spreadsheet and statistical knowledge desired.
 
 ### Agenda
