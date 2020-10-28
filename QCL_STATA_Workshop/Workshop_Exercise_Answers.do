@@ -28,20 +28,19 @@ destring(SUSPECT_WEIGHT), replace force
 
 * 1. Histogram by age and use 5 groups/bins
 /* Hint: Need to use "bin()" option */
-
+histogram SUSPECT_REPORTED_AGE, bin(5)
 
 * 2. Summary Stats for age, weight and height
-
+summarize SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
 
 * 3. correlation age, weight and height
-
+correlate SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
 
 * 4. Scatter plot between age and weight
-/* Hint: try "help scatter" on Command */
-
+scatter SUSPECT_WEIGHT SUSPECT_REPORTED_AGE
 
 * 5. Simple regresssion age and weight
-
+regress SUSPECT_REPORTED_AGE SUSPECT_WEIGHT
 
 * 6. Multiple regression age, weight and height
-
+regress SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
