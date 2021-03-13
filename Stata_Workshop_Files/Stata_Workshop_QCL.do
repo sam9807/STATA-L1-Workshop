@@ -31,20 +31,25 @@ summarize inc910213, detail
 
 hist inc910213
 
-* 7.  Check Categorical (Binary) Variable "winner 16"
+* 7.  Check Categorical (Binary) Variable "winner16"
 codebook winner16
 
-* 8.  Encode winner16
+* 8.  Turn Categorical/Binary Variable "winner16" to Dummy Variable "rep" and Encode rep variable
+generate rep = winner16=="Rep"
+generate dem = winner16=="Dem"
+
 label variable winner16 "Outcome of the 2016 Election for Each County"
+label variable rep "Dummy Variable for Counties that Voted for Candidate Trump in the 2016 Presidential Election"
+
 label define winner16 0 "Dem" 1 "Rep"
-table winner16
+label value rep winner16
 
 * 9.  Let's check whether there is a difference in education level (% of people with bachelors degree) between counties that elected Republican candidate and those that elected Democratic candidate
 ttest edu685213, by(winner16)
 
 * 10. Turn Categorical (Binary) Variable to Dummy Variable
-generate rep = winner16=="Rep"
-generate dem = winner16=="Dem"
+* generate rep = winner16=="Rep"
+* generate dem = winner16=="Dem"
 
 * 11.  Save the data in working memory to the Stata data file "2016_Election_Data.dta"
 save "2016_Election_Data.dta"

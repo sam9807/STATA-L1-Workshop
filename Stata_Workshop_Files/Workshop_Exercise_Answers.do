@@ -1,7 +1,7 @@
-/* [QCL Workshop] Stata Basic Training */ 
+/* [QCL Workshop] Introduction to Stata */ 
 /* Hands-on Exercise Answer Key */ 
-/* Instructors: Cynthia Cheng, Seungho (Samuel) Lee */ 
-/* Date: October 28, 2020 */
+/* Instructor: Seungho (Samuel) Lee */ 
+/* Date: March 10, 2021 & March 12, 2021 */
 
 *** Initialization Commands *** 
 version 15 		/* Use Stata Version 15 Interpreter */
@@ -26,21 +26,24 @@ destring(SUSPECT_WEIGHT), replace force
 
 /* Exercises */
 
-* 1. Histogram by age and use 5 groups/bins
-/* Hint: Need to use "bin()" option */
-histogram SUSPECT_REPORTED_AGE, bin(5)
+* 1. Plot Histogram of age with 25 bins and overlay a normal distribution
+/* Hint: Need to use "bin()" and "normal" options */
+hist SUSPECT_REPORTED_AGE, bin(25) normal /* also can validate with "qnorm SUSPECT_REPORTED_AGE" */
 
-* 2. Summary Stats for age, weight and height
-summarize SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
+* 2. Summary Stats for SUSPECT_REPORTED_AGE, SUSPECT_WEIGHT and SUSPECT_HEIGHT
+summarize SUSPECT_REPORTED_AGE SUSPECT_WEIGHT SUSPECT_HEIGHT, detail
 
-* 3. correlation age, weight and height
-correlate SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
+* 3. Graph a bar chart to plot mean age across 5 borrows of NYC.
+/* Hint 1: Mean is a default setting */
+/* Hint 2: Try "help graph bar" for options */
+/* Hint 3: Borough variable is "STOP_LOCATION_BORO_NAME" */
+graph bar SUSPECT_REPORTED_AGE, over(STOP_LOCATION_BORO_NAME)
 
-* 4. Scatter plot between age and weight
-scatter SUSPECT_WEIGHT SUSPECT_REPORTED_AGE
-
-* 5. Simple regresssion age and weight
-regress SUSPECT_REPORTED_AGE SUSPECT_WEIGHT
-
-* 6. Multiple regression age, weight and height
-regress SUSPECT_REPORTED_AGE SUSPECT_HEIGHT SUSPECT_WEIGHT
+* 4. Use Logit to regress a posession of weapon on SUSPECT_REPORTED_AGE,
+*    SUSPECT_WEIGHT, and Dummy Variable for Manhattan Borough 
+/* Hint 1: Create Dummy Variables right before "logit" function */
+/* Hint 2: Check out "WEAPON_FOUND_FLAG" for "WEAPON" variable*/
+/* Hint 3: Check out "STOP_LOCATION_BORO_NAME" variable */
+gen WEAPON = WEAPON_FOUND_FLAG == "Y"
+gen MANHATTAN = STOP_LOCATION_BORO_NAME == "MANHATTAN"
+logit WEAPON SUSPECT_REPORTED_AGE SUSPECT_WEIGHT SUSPECT_HEIGHT MANHATTAN
