@@ -9,7 +9,7 @@
 The 1.5 hour workshop is intended to introduce Stata and statistical analysis to users with little or no experience for the software.
 
 ### Prerequisite
-1. Local installation or access to Stata through Remote Desktop environment. 
+1. Local installation and access to Stata. 
 1. Though not required, some basic spreadsheet and statistical knowledge desired.
 
 ### Agenda
@@ -20,10 +20,10 @@ The 1.5 hour workshop is intended to introduce Stata and statistical analysis to
 * Define Data
 * Summary Statistics
 * Regression
-* Basic Visualization (including histogram and scatter plot)
+* Basic Visualizations
 
 ### Intended Audience
-Intended audience includes CMC Students, Faculties, Staffs, and and incoming Research Assistants (RA) at relevant research institutes.
+Intended audience includes CMC Students, Faculties, Staffs, and and incoming Research Assistants at relevant research institutes.
 
 ### References
 * Workshop: [**Professor Gelman's 2016 Presidential Election Data by County (Training Data)**](https://github.com/mgelman/data/blob/master/train.csv)
